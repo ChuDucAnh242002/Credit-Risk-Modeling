@@ -82,6 +82,8 @@ Using the data enhanced, rules are created with different specifications.
 
 ## Results
 
+The below table show the first suspicious credit profile which match with the alert rules.
+
 | LIMIT_BAL | util_max | payment_profile | bust_out_score | round_payment_count | delay_count | alert_type_1   | alert_type_2      | alert_type_3  |
 | --------- | -------- | --------------- | -------------- | ------------------- | ----------- | -------------- | ----------------- | ------------- |
 | 120000    | 0.02879  | Volatile        | 2              | 6                   | 2           |                | Structuring Alert |               |
