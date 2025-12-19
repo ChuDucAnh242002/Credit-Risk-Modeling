@@ -46,7 +46,10 @@ data aml.aml_alerts;
 	total_alerts = sum(rule_1_triggered, rule_2_triggered, rule_3_triggered);
 	
 	keep default_payment_next_month limit_bal sex education marriage age alert: rule: total_alerts
-		 bust_out_score util_max payment_profile; 
+		 bust_out_score util_max payment_profile round_payment_count delay_count; 
 run;
+
+
+	
 	
 	

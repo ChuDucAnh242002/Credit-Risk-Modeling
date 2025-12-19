@@ -59,6 +59,8 @@ data aml.credit_card_client_enhanced;
 	end;
 
 	/* Payment behavior classification */
+	length payment_profile $15;
+
 	if delay_count = 0 then payment_profile = "Always Duly";
 	else if delay_count = 6 then payment_profile = "Always Delayed";
 	else if 

@@ -5,18 +5,13 @@ proc means data=aml.credit_card_client_enhanced n mean std;
 	title "Demographic Profile of High-Risk Accounts";
 run;
 
-/*
-proc transpose data=aml.credit_card_client_enhanced out=status_long prefix=status;
-	by default_payment_next_month;
-	var pay_1-pay_6;
+proc print data=aml.aml_alerts (obs=20) noobs;
+	var limit_bal util_max payment_profile
+		bust_out_score round_payment_count delay_count
+		alert_type_1 alert_type_2 alert_type_3;
+	where total_alerts > 0;
+	title "First 20 Observations of AML Alerts";
 run;
-
-proc sgplot data=status_long;
-	series x=_name_ y=status1 / group=default_payment_next_month;
-	xaxis lable="Month" values=('pay_1', 'pay_2', 'pay_3', 'pay_4', 'pay_5', 'pay_6');
-	title "Average Repayment Status Trajectory by Risk Group";
-run;
-*/
 
 proc report data=aml.aml_alerts nowd;
 	where total_alerts > 0;

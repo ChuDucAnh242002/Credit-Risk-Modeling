@@ -1,5 +1,5 @@
 /* Descriptive statistics and exploratory data analysis */
-proc print data=aml.credit_card_client_enhanced (obs=20);
+proc print data=aml.credit_card_client_enhanced (obs=20) noobs;
 	var default_payment_next_month limit_bal age bust_out_alert sleeper_alert;
 	TITLE "First 20 Observations with Key AML Features";
 run;
